@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills & Lessons Summary</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f4f7f6; /* Light background */
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .topic {
+            cursor: pointer;
+            margin-bottom: 10px;
+            padding: 12px 15px;
+            background-color: #e2e8f0; /* Tailwind gray-200 */
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+            display: flex;
+            align-items: center;
+            font-weight: 600;
+            gap: 10px; /* Space between icon and text */
+        }
+        .topic:hover {
+            background-color: #cbd5e1; /* Tailwind gray-300 */
+        }
+        .topic-header {
+             flex-grow: 1; /* Allow text to take available space */
+        }
+        .content {
+            margin-left: 20px;
+            padding-left: 15px;
+            border-left: 2px solid #94a3b8; /* Tailwind slate-400 */
+            margin-top: 8px;
+            margin-bottom: 15px;
+            overflow: hidden; /* Hide overflow during transition */
+            max-height: 0; /* Start collapsed */
+            transition: max-height 0.5s ease-in-out; /* Smooth transition */
+        }
+        .content.expanded {
+            max-height: 1000px; /* Large enough value to show content */
+        }
+        .arrow {
+            transition: transform 0.3s ease;
+            margin-left: auto; /* Push arrow to the right */
+        }
+        .arrow.expanded {
+            transform: rotate(90deg);
+        }
+        h1 {
+            text-align: center;
+            color: #1e3a8a; /* Tailwind blue-900 */
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        strong {
+            color: #1d4ed8; /* Tailwind blue-700 */
+        }
+        .icon {
+            width: 20px;
+            height: 20px;
+            fill: #475569; /* Tailwind slate-600 */
+        }
+         .sub-topic {
+            cursor: pointer;
+            margin-bottom: 5px;
+            padding: 10px 12px;
+            background-color: #dbeafe; /* Tailwind blue-100 */
+            border-radius: 6px;
+            transition: background-color 0.3s ease;
+            display: flex;
+            align-items: center;
+            font-weight: 600;
+            gap: 10px;
+        }
+         .sub-topic:hover {
+            background-color: #bfdbfe; /* Tailwind blue-200 */
+         }
+         .sub-content {
+            margin-left: 10px;
+            padding-left: 15px;
+            border-left: 2px solid #60a5fa; /* Tailwind blue-400 */
+            margin-top: 5px;
+            margin-bottom: 10px;
+            overflow: hidden;
+            max-height: 0;
+            transition: max-height 0.5s ease-in-out;
+         }
+         .sub-content.expanded {
+             max-height: 1000px; /* Large enough value */
+         }
+         .sub-arrow {
+             transition: transform 0.3s ease;
+             margin-left: auto;
+         }
+         .sub-arrow.expanded {
+             transform: rotate(90deg);
+         }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Skills & Lessons from the Video</h1>
+
+        <div class="topic" data-target="skills-content">
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 4H21V6H3V4ZM3 11H21V13H3V11ZM3 18H21V20H3V18Z"></path></svg> <span class="topic-header">Skills Mentioned</span>
+            <span class="arrow">></span>
+        </div>
+        <div id="skills-content" class="content">
+            <ul>
+                <li>Web Development (including HTML, CSS, JavaScript, React, Next.js)</li>
+                <li>Video Editing</li>
+                <li>Filming/Shooting</li>
+                <li>English</li>
+            </ul>
+        </div>
+
+        <div class="topic" data-target="lessons-content">
+             <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 6C2 5.44772 2.44772 5 3 5H21C21.5523 5 22 5.44772 22 6V18C22 18.5523 21.5523 19 21 19H3C2.44772 19 2 18.5523 2 18V6ZM4 7V17H20V7H4ZM6 9H10V11H6V9ZM6 13H18V15H6V13Z"></path></svg> <span class="topic-header">Lessons and Steps to Master a Skill</span>
+            <span class="arrow">></span>
+        </div>
+        <div id="lessons-content" class="content">
+
+            <div class="sub-topic" data-target="lesson1-content">
+                <span class="topic-header">How to Choose the Right Skill</span>
+                <span class="sub-arrow">></span>
+            </div>
+            <div id="lesson1-content" class="sub-content">
+                <ul>
+                    <li>Watch videos about trending skills.</li>
+                    <li>Consider demand vs. supply (high demand, low supply).</li>
+                    <li><strong>Alpha Method:</strong> Check company careers portals for required skills in job descriptions.</li>
+                    <li><strong>Freelancing Websites:</strong> Analyze profiles (Fiverr, Upwork) to see earnings, demo work, and service packaging.</li>
+                </ul>
+            </div>
+
+            <div class="sub-topic" data-target="lesson2-content">
+                 <span class="topic-header">The Golden Hour Rule</span>
+                <span class="sub-arrow">></span>
+            </div>
+            <div id="lesson2-content" class="sub-content">
+                <ul>
+                    <li>Shortlist a few skills (e.g., five).</li>
+                    <li>Dedicate one hour each day to each skill.</li>
+                    <li>Be specific about the time.</li>
+                    <li>Use that hour to get an overview (YouTube, Google, AI like GPT).</li>
+                    <li>Choose the skill you feel most interested in after this initial exploration.</li>
+                </ul>
+            </div>
+
+            <div class="sub-topic" data-target="lesson3-content">
+                 <span class="topic-header">Understand Your Reason for Learning</span>
+                <span class="sub-arrow">></span>
+            </div>
+            <div id="lesson3-content" class="sub-content">
+                <ul>
+                    <li>Ask yourself *why* you are learning the skill.</li>
+                    <li>Curiosity is highlighted as the best motivator for long-term learning and mastery.</li>
+                </ul>
+            </div>
+
+            <div class="sub-topic" data-target="lesson4-content">
+                 <span class="topic-header">Make Learning Interesting to Combat Boredom</span>
+                <span class="sub-arrow">></span>
+            </div>
+            <div id="lesson4-content" class="sub-content">
+                <ul>
+                    <li>Boredom can happen after reaching a certain level.</li>
+                    <li>Avoid passive learning.</li>
+                    <li>Find engaging ways to learn.</li>
+                </ul>
+            </div>
+
+            <div class="sub-topic" data-target="lesson5-content">
+                 <span class="topic-header">Best Learning Approach (Theory + Practice)</span>
+                <span class="sub-arrow">></span>
+            </div>
+            <div id="lesson5-content" class="sub-content">
+                <ul>
+                    <li>Avoid just theory or just practice first.</li>
+                    <li><strong>Recommended:</strong> Understand basic theory first.</li>
+                    <li>Then move directly to practical application.</li>
+                    <li>Use AI tools (like GPT) to help decode practical examples, but understand *why* things work (the "figure out" method).</li>
+                    <li>Go deeper if you don't understand concepts (e.g., ask what "tense" means).</li>
+                </ul>
+            </div>
+
+            <div class="sub-topic" data-target="lesson6-content">
+                 <span class="topic-header">Learn from Professionals and Real-World Projects</span>
+                <span class="sub-arrow">></span>
+            </div>
+            <div id="lesson6-content" class="sub-content">
+                <ul>
+                    <li>Observe professionals working.</li>
+                    <li>Work on real-world projects.</li>
+                    <li>Best way: Find a client and work for free initially to gain experience and understand revisions.</li>
+                    <li>Alternatively, intern on a team building real-world projects.</li>
+                    <li>Find others learning the same skill to discuss and teach each other.</li>
+                </ul>
+            </div>
+
+            <div class="sub-topic" data-target="lesson7-content">
+                 <span class="topic-header">Understand the Nature of Your Skill</span>
+                <span class="sub-arrow">></span>
+            </div>
+            <div id="lesson7-content" class="sub-content">
+                <ul>
+                    <li>Identify the memorization part and the practice part.</li>
+                    <li>Structure your learning based on the skill's nature (e.g., daily time for memorization, set practice times).</li>
+                </ul>
+            </div>
+
+             <div class="sub-topic" data-target="lesson8-content">
+                 <span class="topic-header">Basic Learning Tricks</span>
+                <span class="sub-arrow">></span>
+            </div>
+            <div id="lesson8-content" class="sub-content">
+                <ul>
+                    <li>Use visuals and draw things out.</li>
+                    <li>Set small, achievable daily/short-term goals.</li>
+                    <li>Set long-term goals to visualize progress and stay motivated.</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        // Get all elements with the class 'topic' and 'sub-topic'
+        const topics = document.querySelectorAll('.topic, .sub-topic');
+
+        // Add a click event listener to each topic/sub-topic
+        topics.forEach(topic => {
+            topic.addEventListener('click', () => {
+                // Get the target content element ID from the data-target attribute
+                const targetId = topic.dataset.target;
+                const content = document.getElementById(targetId);
+                const arrow = topic.querySelector('.arrow, .sub-arrow'); // Select either arrow type
+
+                // Toggle the 'expanded' class on the content for smooth transition
+                content.classList.toggle('expanded');
+
+                // Toggle the 'expanded' class on the arrow for rotation
+                if (arrow) { // Check if arrow exists
+                   arrow.classList.toggle('expanded');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
